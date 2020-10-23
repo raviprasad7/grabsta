@@ -1,0 +1,87 @@
+.post-header {
+  display: flex;
+  padding: 0;
+
+  p {
+    margin: 0;
+  }
+
+  .post-avatar {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+
+    .ant-avatar {
+      background-color: $primary-color;
+    }
+  }
+
+  .post-header-info {
+    width: 55%;
+
+    .post-owner {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .post-title {
+      font-size: 0.75rem;
+    }
+  }
+
+  .post-header-options {
+    width: 30%;
+
+    .follow-button {
+      color: $primary-color;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+
+      >span:first-of-type {
+        margin-left: 0px;
+      }
+
+      >span:last-of-type {
+        margin-left: 4px;
+      }
+
+      &:hover {
+        color: $primary-4;
+      }
+    }
+  }
+
+
+}
+
+.post-image {
+  position: relative;
+
+  .shop-icon {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    cursor: pointer;
+  }
+}
+
+.post-body {
+  .post-options {
+    display: flex;
+    justify-content: space-between;
+
+    .like-button {
+      margin: 2px;
+
+      &.liked path:last-of-type {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  .post-hashtags {
+    font-weight: 600;
+  }
+}

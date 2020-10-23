@@ -1,0 +1,90 @@
+.merchant-cover {
+  position: relative;
+
+  .merchant-image {
+    background-image: url("../images/merchant-cover.jpg");
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .merchant-title {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    transform: translate(-40%, -60%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 1.5rem;
+    padding: 10px;
+    width: 75%;
+  }
+}
+
+.merchant-info {
+  padding: 10px 10px 0;
+  transform: translate(0px, -50px);
+
+  .merchant-card {
+    padding: 10px;
+    border: 1px solid $grey-color;
+    border-radius: 10px;
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .merchant-rating {
+      font-weight: bold;
+    }
+
+    .details-icon {
+      color: $dark-grey-color;
+
+      span {
+        text-decoration: underline;
+      }
+
+      &:before {
+        content: " | ";
+        text-decoration: none;
+      }
+    }
+
+    .delivery-time {
+      font-weight: bold;
+    }
+
+    .delivery-distance {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.menu-items {
+  transform: translate(0px, -50px);
+
+  .menu-category {
+    padding: 15px;
+  }
+
+  .item-price {
+    font-weight: 500;
+  }
+
+  .add-item {
+    width: 50px;
+    height: 25px;
+    font-size: 0.75rem;
+    padding: 3px;
+
+    span {
+      margin-left: 2px;
+    }
+  }
+}

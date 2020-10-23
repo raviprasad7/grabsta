@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  background-color: $light-grey-color;
+}
+
+.app-header {
+  background-color: $primary-color;
+  color: $white-color;
+  height: 75px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .logo {
+    background-image: url("../images/logo.png");
+    width: 100px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .header-desc {
+    font-size: 0.6rem;
+    line-height: 2;
+  }
+}
+
+
+// overriding antd styles
+
+.ant-card {
+  margin: 10px 0;
+
+  .ant-card-head {
+    padding: 0;
+  }
+}
+
+.ant-skeleton-title {
+  height: 14px !important;
+  margin-top: 0 !important;
+}
+
+.ant-skeleton-paragraph {
+  margin: 0 !important;
+
+  li {
+    height: 14px !important;
+  }
+}
+
+.ant-card-cover {
+  img {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+.ant-card-body {
+  padding: 5px !important;
+}
+
+.anticon-loading {
+  padding: 0 !important;
+}
+
+.anticon-shop svg,
+.anticon-field-time svg,
+.anticon-dollar-circle svg {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+}
+
+.anticon-dollar-circle svg {
+  path {
+    fill: $orange-1;
+  }
+}
+
+.anticon-shop path,
+.anticon-heart path:first-of-type {
+  fill: $primary-color !important;
+}
+
+.anticon-star path {
+  fill: $yellow-3;
+}
+
+.anticon-right path {
+  fill: $dark-grey-color;
+}
+
+.ant-list-header,
+.ant-list-item {
+  border-bottom: none !important;
+}
+
+.ant-list-header {
+  padding-bottom: 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.ant-btn-primary {
+  background-color: $primary-color !important;
+}
+
+.anticon-plus {
+  margin-left: 0 !important;
+}
