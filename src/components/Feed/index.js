@@ -7,17 +7,10 @@ import { Layout } from "antd";
 const { Header } = Layout;
 
 class Feed extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-    };
-  }
   componentDidMount() {
     this.props.fetchPosts();
   }
   render() {
-    console.log("render", this.props);
     const { posts, isLoading } = this.props;
     if (posts.length === 0) {
       posts.push(...Array(3).fill({}));
@@ -39,7 +32,6 @@ class Feed extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("mapStateToProps", state);
   return {
     posts: state.postData.posts,
     isLoading: state.postData.isLoading,

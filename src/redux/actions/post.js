@@ -1,49 +1,89 @@
-import { FETCH_POSTS, GET_POST, LIKE_POST } from "./types";
+import { FETCH_POSTS, LIKE_POST, FETCH_POSTS_ENDPOINT } from "./types";
 
 export const fetchPosts = () => (dispatch) => {
+  // return fetch(FETCH_POSTS_ENDPOINT, {
+  //   header: {
+  //     "X-CLIENT-ID": "xtramile",
+  //   },
+  // })
+  //   .then((data) => data.json())
+  //   .then((response) => {
+  //     console.log("fetched", response);
+  //   });
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([]);
     }, 0);
   }).then(() => {
-    const data = [
+    const posts = [
       {
-        id: 1,
-        title: "Thai cuisine at its best",
-        description: "Loved this food at this Jason_revamp_im2",
-        vendor: "Jason_revamp_im2",
-        vendorLink: "link",
-        ownerId: 4,
-        owner: "Jade",
-        imageUrl:
-          "https://d3nk6pcgpmbqy2.cloudfront.net/compressed/merchants/3-CYWTJYN3GXVDJE/hero/1fa1cd6922744e54863135a463c7144b_1567045255369141481.jpeg",
-        likes: 4,
-        isLiked: true,
-        hashtags: ["#ambience", "#portions", "#outdoor", "#brunch"],
+        ID: 3,
+        Title: "Health First!!",
+        Description:
+          "My secret pleasure after a good workout! Nothing is more rewarding than a hearty healthy feast",
+        Vendor: "Healty Eating",
+        VendorLink: "link",
+        OwnerId: 5,
+        ImageUrl: "image-3.jpg",
+        Likes: 9,
+        OwnerName: "Jojje",
+        Hashtags: "#foodlove #health ",
       },
       {
-        id: 2,
-        title: "Mexicans is love",
-        description: "Mexicans,Grocery test,Hematnya Berbuka",
-        vendor: "Ting restaurant next open time",
-        vendorLink: "link",
-        ownerId: 4,
-        owner: "Zoe",
-        imageUrl:
-          "https://d3nk6pcgpmbqy2.cloudfront.net/compressed/merchants/6-CYNUCVDVE8MCEX/hero/05db0b5a05934d0c844dc34546ae878b_1568873863164253339.jpeg",
-        likes: 2,
-        isLiked: false,
-        hashtags: [
-          "#friendlyservice",
-          "#courteousstaff",
-          "#cozyplace",
-          "#dinein",
-        ],
+        ID: 1,
+        Title: "Thai cuisine at its best",
+        Description: "Loved this food from this super-licious restaurant",
+        Vendor: "Jason_revamp_im2",
+        VendorLink: "link",
+        OwnerId: 4,
+        ImageUrl: "image-1.jpg",
+        Likes: 8,
+        OwnerName: "Zoe",
+        Hashtags: "#thai #foodlove",
+      },
+      {
+        ID: 2,
+        Title: "Mexicans is love",
+        Description:
+          "Too hungry for a snack but too early for dinner? I don’t face this dilemma anymore since I found this combo",
+        Vendor: "147 Seafood Steamboat",
+        VendorLink: "link",
+        OwnerId: 4,
+        ImageUrl: "image-2.jpg",
+        Likes: 2,
+        OwnerName: "James",
+        Hashtags: "#mexican #combo #drink #fishislove",
+      },
+      {
+        ID: 4,
+        Title: "Yay Delicious",
+        Description:
+          "Alert! Finally found the best cure to hangovers - don’t think, just go for it and thank me later!”\n",
+        Vendor: "La'pino",
+        VendorLink: "link",
+        OwnerId: 7,
+        ImageUrl: "image-4.jpg",
+        Likes: 0,
+        OwnerName: "Antony",
+        Hashtags: "#sgfdfancy #charwayteow",
+      },
+      {
+        ID: 5,
+        Title: "Food and Fun",
+        Description:
+          "Always there as messiah to deliver food even at late working hours",
+        Vendor: "Ting restaurant next open time",
+        VendorLink: "link",
+        OwnerId: 4,
+        ImageUrl: "image-5.jpg",
+        Likes: 0,
+        OwnerName: "Ling",
+        Hashtags: "#foodislove #noodler #foodfever ",
       },
     ];
     dispatch({
       type: FETCH_POSTS,
-      payload: data,
+      payload: posts,
       isLoading: false,
     });
   });

@@ -1,3 +1,4 @@
 import postData from "./post";
+import merchantData from "./merchant";
 
-export { postData };
+export { postData, merchantData };
