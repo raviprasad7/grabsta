@@ -1,4 +1,4 @@
-## Available Scripts
+## README.md
 
 In the project directory, run:
 
