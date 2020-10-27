@@ -1,6 +1,7 @@
 export const FETCH_POSTS = "FETCH_POSTS";
 export const CREATE_POST = "CREATE_POST";
 export const LIKE_POST = "LIKE_POST";
+export const UNLIKE_POST = "UNLIKE_POST";
 
 export const FETCH_MERCHANT = "FETCH_MERCHANT";
 

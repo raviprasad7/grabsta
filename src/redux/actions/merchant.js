@@ -2,7 +2,7 @@ import { FETCH_MERCHANT } from "./types";
 
 export const fetchMerchant = () => (dispatch) => {
   return new Promise((resolve) => {
-    setTimeout(resolve, 0);
+    setTimeout(resolve, 3000);
   }).then(() => {
     dispatch({
       type: FETCH_MERCHANT,

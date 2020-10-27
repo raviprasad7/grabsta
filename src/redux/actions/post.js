@@ -1,4 +1,9 @@
-import { FETCH_POSTS, LIKE_POST, FETCH_POSTS_ENDPOINT } from "./types";
+import {
+  FETCH_POSTS,
+  LIKE_POST,
+  UNLIKE_POST,
+  FETCH_POSTS_ENDPOINT,
+} from "./types";
 
 export const fetchPosts = () => (dispatch) => {
   // return fetch(FETCH_POSTS_ENDPOINT, {
@@ -13,7 +18,7 @@ export const fetchPosts = () => (dispatch) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([]);
-    }, 0);
+    }, 3000);
   }).then(() => {
     const posts = [
       {
@@ -89,15 +94,29 @@ export const fetchPosts = () => (dispatch) => {
   });
 };
 
-export const likePost = () => (dispatch) => {
-  console.log("liking");
+export const likePost = (id) => (dispatch) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve([]);
-    });
+      resolve();
+    }, 700);
   }).then(() => {
     dispatch({
       type: LIKE_POST,
+      id: id,
+      success: true,
+    });
+  });
+};
+
+export const unlikePost = () => (dispatch) => {
+  console.log("liking");
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 700);
+  }).then(() => {
+    dispatch({
+      type: UNLIKE_POST,
       success: true,
     });
   });

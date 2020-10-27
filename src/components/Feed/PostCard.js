@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { fetchPosts, likePost, unlikePost } from "../../redux/actions/post";
 import { Card, Button, Avatar, Skeleton, Row, Col } from "antd";
 import {
   PlusCircleOutlined,
@@ -73,7 +75,7 @@ class PostCard extends Component {
   };
 
   getPostDescription = () => {
-    const { Likes, Description, Hashtags, isLoading } = this.props;
+    const { ID, Likes, Description, Hashtags, isLoading } = this.props;
     const { isLiked } = this.state;
     if (!isLoading) {
       return (
@@ -82,7 +84,7 @@ class PostCard extends Component {
             <div>
               <HeartTwoTone
                 className={`like-button${isLiked ? " liked" : ""}`}
-                onClick={this.toggleLike}
+                onClick={() => this.toggleLike(ID)}
               />
               {Likes}
             </div>
@@ -97,10 +99,18 @@ class PostCard extends Component {
     }
   };
 
-  toggleLike = () => {
-    setTimeout(() => {
-      this.setState((prevState) => ({ isLiked: !prevState.isLiked }));
-    }, 500);
+  toggleLike = (id) => {
+    // console.log(id);
+    this.props.likePost(id).then(() => {
+      this.setState((prevState) => ({
+        isLiked: !prevState.isLiked,
+      }));
+    });
+    // setTimeout(() => {
+    //   this.setState((prevState) => ({
+    //     isLiked: !prevState.isLiked,
+    //   }));
+    // }, 500);
   };
 
   toggleFollow = () => {
@@ -113,6 +123,7 @@ class PostCard extends Component {
     }, 500);
   };
   render() {
+    console.log("render");
     const { isLoading } = this.props;
 
     return (
@@ -127,4 +138,15 @@ class PostCard extends Component {
   }
 }
 
-export default PostCard;
+const mapStateToProps = (state) => {
+  console.log("state inside ", state);
+
+  return {
+    posts: state.postData.posts,
+    isLoading: state.postData.isLoading,
+  };
+};
+
+export default connect(mapStateToProps, { fetchPosts, likePost, unlikePost })(
+  PostCard
+);

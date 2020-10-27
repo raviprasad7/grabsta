@@ -16,9 +16,17 @@ function reducer(state = initialState, action) {
     case CREATE_POST:
       break;
     case LIKE_POST:
+      console.log(state);
+      const newPosts = [...state.posts];
+      newPosts.forEach((post) => {
+        if (action.id === post.ID) {
+          post.Likes++;
+        }
+      });
+      console.log(newPosts);
       return {
         ...state,
-        isLiked: true,
+        posts: newPosts,
       };
     default:
       return state;
